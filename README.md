@@ -48,3 +48,13 @@ This task is to analyse whether two categorical variables (neighboorhood and occ
 A chi-squared test, also written as `𝜒2` test, is a statistical hypothesis test that is valid to perform when the test statistic is chi-squared distributed under the null hypothesis. Chi-square test for independence compares two variables in a contingency table to see if they are related and it tests to see whether distributions of categorical variables differ from each another. 
 
 In the example on wikipedia, the chi-squared result is 24.6. Using SciPy, I demonstarted that 24.6 was the correct result and that the variables neighbourhood and occupation are  dependent of each other and not independent
+
+#### Task 3 - Standard Deviation
+
+The standard deviation of an array of numbers x is calculated using numpy as np.sqrt`(np.sum((x - np.mean(x))**2)/len(x))` Microsoft Excel has two different versions of the standard deviation calculation, STDEV.P and STDEV.S. STDEV.P functions performs the above calculation but in the STDEV.P calculation, the division is by `len(x)-1` rather than `len(x)`. Reserach both excel functions explaning the difference between them. Then use numpy to perform a simulation demonstrating that the STDEV.S calculaion is a better estimate for the standard deviation of a population when performed on a sample.
+
+STDEV.P and STDEV.S are both functions in excel that perform standard deviation. STDEV.P is used when you have data for the entire population or you have a sample of data but you only want the standard deviation for that sample. You do not need to extrapolate the data for the entire population. STDEV.S uses a sample of the population and you want to estimate the standard deviation for the entire population.NumPy has the capability to work like the Excel functions STDEV.P and STDEV.S. It has a built in function called `numpy.std` which operates the same as STDEV.P. The function allows you to pass an argument `ddof=1` which changes the standard deviation caluclation to the same as STDEV.S
+
+#### Task 4 - Kmeans
+
+Use `scikit-learn` to apply k-means clustering to Fisher’s famous Iris data set. Explain how the code works and how accurate it might be, then explain how your model could be used to make predictions of species of iris.
